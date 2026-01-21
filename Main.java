@@ -5,11 +5,13 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         FitnessApp app = new FitnessApp();
+        UserDAO dao = new UserDAO();2
 
         System.out.print("Enter number of users: ");
         int n = sc.nextInt();
 
         for (int i = 0; i < n; i++) {
+
             System.out.print("ID: ");
             int id = sc.nextInt();
 
@@ -23,25 +25,17 @@ public class Main {
             double weight = sc.nextDouble();
 
             User user = new User(id, name, age, weight);
-            app.addUser(user);
+
+            app.addUser(user);     // collection
+            dao.addUser(user);     // database
         }
 
-        System.out.println("\n--- All users ---");
         app.showAllUsers();
 
-        System.out.println("\n--- Adults (filter) ---");
-        app.filterAdults();
+        WorkoutPlan p1 = new CardioPlan(30);
+        WorkoutPlan p2 = new StrengthPlan(45);
 
-        System.out.println("\n--- Sorted by weight ---");
-        app.sortByWeight();
-        app.showAllUsers();
-
-        WorkoutPlan plan1 = new CardioPlan(30);
-        WorkoutPlan plan2 = new StrengthPlan(45);
-
-        plan1.showPlan();
-        plan2.showPlan();
+        p1.showPlan();
+        p2.showPlan();
     }
 }
-
-
