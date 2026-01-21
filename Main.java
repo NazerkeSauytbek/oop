@@ -5,7 +5,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         FitnessApp app = new FitnessApp();
-        UserDAO dao = new UserDAO();2
+        UserDAO dao = new UserDAO();
 
         System.out.print("Enter number of users: ");
         int n = sc.nextInt();
@@ -32,10 +32,10 @@ public class Main {
 
         app.showAllUsers();
 
-        WorkoutPlan p1 = new CardioPlan(30);
-        WorkoutPlan p2 = new StrengthPlan(45);
+        WorkoutPlanDAO planDAO = new WorkoutPlanDAO();
 
-        p1.showPlan();
-        p2.showPlan();
+        planDAO.addPlan("Cardio", 30);
+        planDAO.addPlan("Strength", 45);
+
     }
 }

@@ -22,7 +22,7 @@ public class User extends Person{
     }
     @Override
     public String toString(){
-        return "User{id=" +id+", name"+name+"', age="+age+", weight="+weight+"}";
+        return "User{id=" +id+", name:'"+name+"', age="+age+", weight="+weight+"}";
     }
     @Override
     public boolean equals(Object o){
